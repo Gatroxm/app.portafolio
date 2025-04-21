@@ -113,3 +113,44 @@ CREATE TABLE cursos_realizados (
 ```
 npm start
 ```
+6. LogIn de usuarios:
+
+```
+curl --location --request POST 'http://localhost:3000/api/auth/login' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "email": "usuario@ejemplo.com",
+    "password": "123456"
+}
+```
+7. Creación de Usuarios:
+
+```
+curl --location --request POST 'http://localhost:3000/api/usuarios' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "nombre": "Nombre del Usuario",
+    "correo": "correo@ejemplo.com",
+    "nickname": "Nickname del Usuario",
+    "password": "123456",
+    "rol": "admin"
+}
+```
+curl --location --request PUT 'http://localhost:3000/api/usuarios/:id' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "nombre": "Nombre del Usuario",
+    "correo": "correo@ejemplo.com",
+    "nickname": "Nickname del Usuario"
+}
+```
+curl --location --request DELETE 'http://localhost:3000/api/usuarios/:id' \
+--header 'Content-Type: application/json' \
+```
+curl --location --request PUT 'http://localhost:3000/api/usuarios/password/:id' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "password": "123456"
+}
+```
+

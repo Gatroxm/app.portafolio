@@ -1,0 +1,23 @@
+meta {
+  name: Editar Usuario
+  type: http
+  seq: 2
+}
+
+put {
+  url: http://localhost:3000/api/usuarios/2
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiYWRtaW4iLCJpYXQiOjE3NDUyMDE1NTcsImV4cCI6MTc0NTIxNTk1N30.qpnx5TVlj7K10DnzqfRL9UQh8eJpMModAC7ukSiTq0I
+}
+
+body:json {
+  {
+    "nombre": "Andres Felipe Velez",
+    "correo": "andes@gmail.com",
+    "nickname": "Andres"
+  }
+}

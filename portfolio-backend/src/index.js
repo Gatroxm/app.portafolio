@@ -11,6 +11,7 @@ app.use(express.json());
  * Configuracion de rutas
  */
 import authRoutes from '../routes/auth.routes.js';
+import userRoutes from '../routes/user.routes.js';
 
 app.get('/api/ping', async (req, res) => {
     try {
@@ -22,6 +23,7 @@ app.get('/api/ping', async (req, res) => {
     }
 });
 app.use('/api/auth', authRoutes);
+app.use('/api/usuarios', userRoutes);
 /**
  * Configuracion de puerto
  */
