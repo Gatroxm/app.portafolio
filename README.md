@@ -136,6 +136,7 @@ curl --location --request POST 'http://localhost:3000/api/usuarios' \
     "rol": "admin"
 }
 ```
+```
 curl --location --request PUT 'http://localhost:3000/api/usuarios/:id' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -144,8 +145,10 @@ curl --location --request PUT 'http://localhost:3000/api/usuarios/:id' \
     "nickname": "Nickname del Usuario"
 }
 ```
+```
 curl --location --request DELETE 'http://localhost:3000/api/usuarios/:id' \
 --header 'Content-Type: application/json' \
+```
 ```
 curl --location --request PUT 'http://localhost:3000/api/usuarios/password/:id' \
 --header 'Content-Type: application/json' \
