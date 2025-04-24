@@ -56,3 +56,11 @@ CREATE TABLE cursos_realizados (
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
 );
+CREATE TABLE mensajes (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  para_usuario_id INT NOT NULL,
+  nombre_emisor VARCHAR(100),
+  email_emisor VARCHAR(150),
+  mensaje TEXT,
+  creado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

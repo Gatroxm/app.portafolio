@@ -106,6 +106,14 @@ CREATE TABLE cursos_realizados (
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
 );
+CREATE TABLE mensajes (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  para_usuario_id INT NOT NULL,
+  nombre_emisor VARCHAR(100),
+  email_emisor VARCHAR(150),
+  mensaje TEXT,
+  creado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 ```
 
 5. Iniciar el servidor:
@@ -157,3 +165,19 @@ curl --location --request PUT 'http://localhost:3000/api/usuarios/password/:id' 
 }
 ```
 
+8. Creación de Mensajes:
+
+```
+curl --location --request POST 'http://localhost:3000/api/mensajes' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "para_usuario_id": 1,
+    "nombre_emisor": "Nombre del Usuario",
+    "email_emisor": "correo@ejemplo.com",
+    "mensaje": "Mensaje del Usuario"
+}
+```
+```
+curl --location --request GET 'http://localhost:3000/api/mensajes' \
+--header 'Content-Type: application/json' \
+```
