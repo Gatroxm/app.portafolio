@@ -1,7 +1,7 @@
 
 import express from 'express';
 import dotenv from 'dotenv';
-import { db } from '../config/db.js';
+import { db } from './config/db.js';
 
 dotenv.config();
 
@@ -10,8 +10,9 @@ app.use(express.json());
 /**
  * Configuracion de rutas
  */
-import authRoutes from '../routes/auth.routes.js';
-import userRoutes from '../routes/user.routes.js';
+import authRoutes from './Usuarios/routes/auth.routes.js';
+import userRoutes from './Usuarios/routes/user.routes.js';
+import mensajeRoutes from './Mensajes/routes/mensaje.routes.js';
 
 app.get('/api/ping', async (req, res) => {
     try {
@@ -24,6 +25,7 @@ app.get('/api/ping', async (req, res) => {
 });
 app.use('/api/auth', authRoutes);
 app.use('/api/usuarios', userRoutes);
+app.use('/api/mensajes', mensajeRoutes);
 /**
  * Configuracion de puerto
  */

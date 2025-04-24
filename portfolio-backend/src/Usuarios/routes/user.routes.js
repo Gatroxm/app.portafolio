@@ -1,7 +1,7 @@
 // routes/user.routes.js
 import { Router } from 'express'
 import { createUser, updateUser, deleteUser, editPassword } from '../controllers/user.controller.js'
-import { verificarToken } from '../middlewares/auth.middleware.js'
+import { verificarToken } from '../../middlewares/auth.middleware.js'
 
 const router = Router()
 

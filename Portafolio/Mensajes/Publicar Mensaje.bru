@@ -1,0 +1,24 @@
+meta {
+  name: Publicar Mensaje
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:3000/api/mensajes
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwicm9sIjoidXN1YXJpbyIsImlhdCI6MTc0NTQ1NzcxNSwiZXhwIjoxNzQ1NDcyMTE1fQ.bdwR8X-02fplEMI7uzhL8EypLFjwM-rt6BpuUE8hzpk
+}
+
+body:json {
+  { 
+    "para_usuario_id" : 1,
+    "nombre_emisor": "andes1@gmail.com",
+    "email_emisor": "Andres Felipe Velez 2",
+    "mensaje": "Hola necesito contactarte mira mu numero 1234567890"
+  }
+}
